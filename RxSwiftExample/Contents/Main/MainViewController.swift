@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  RxSwiftExample
 //
 //  Created by 엄기철 on 11/02/2019.
@@ -13,7 +13,7 @@ import RxViewController
 import SnapKit
 import Moya
 
-final class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 	
 	let disposed: DisposeBag = DisposeBag()
 	
