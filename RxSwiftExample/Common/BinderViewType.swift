@@ -6,4 +6,12 @@
 //  Copyright © 2019 Hanzo. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+public protocol BinderViewType: class {
+	associatedtype ViewModel
+	var viewModel: ViewModel! { get set }
+	var disposedBag: DisposeBag {get set}
+	func uiEventBinding()
+	func uiStateBinding()
+}

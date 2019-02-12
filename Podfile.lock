@@ -9,8 +9,6 @@ PODS:
   - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - ReactorKit (1.2.1):
-    - RxSwift (>= 4.0.0)
   - Result (3.2.4)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
@@ -19,9 +17,6 @@ PODS:
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxFlow (1.6.2):
-    - RxCocoa (>= 4.3.0)
-    - RxSwift (>= 4.3.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
   - RxViewController (0.4.0):
@@ -34,10 +29,8 @@ PODS:
 DEPENDENCIES:
   - Moya (~> 11.0)
   - Moya/RxSwift (~> 11.0)
-  - ReactorKit
   - RxCocoa (~> 4.0)
   - RxDataSources (~> 3.0)
-  - RxFlow
   - RxSwift (~> 4.0)
   - RxViewController
   - SnapKit (~> 4.0.0)
@@ -49,12 +42,10 @@ SPEC REPOS:
     - Alamofire
     - Differentiator
     - Moya
-    - ReactorKit
     - Result
     - RxAtomic
     - RxCocoa
     - RxDataSources
-    - RxFlow
     - RxSwift
     - RxViewController
     - SnapKit
@@ -65,18 +56,16 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Moya: a725035953bc1c0eb1be505ab903984501d82440
-  ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
-  RxFlow: 2460b8f1d546a7536d3b259536357301030a4140
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   RxViewController: 359bbc2fda373a78605b2735afb0f9f4f3f6c3e4
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Sniffer: a5d3a1d5478afe874a78cd254923c43ae20262df
   SwiftLint: 47df60bdea6e7e902b193b6596db8683aafd86a3
 
-PODFILE CHECKSUM: 59557124123e38a30b295acfe5c6d99a04a68bbe
+PODFILE CHECKSUM: 264601c813d7c7b094f474b889bd6416c0907168
 
 COCOAPODS: 1.5.3

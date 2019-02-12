@@ -12,9 +12,6 @@ target 'RxSwiftExample' do
 	pod 'RxViewController'
 	pod 'RxDataSources', '~> 3.0'
 	pod 'Moya/RxSwift', '~> 11.0'
-	pod 'ReactorKit'
-	pod 'RxFlow'
-	
 	
 	# Network
 	pod 'Moya', '~> 11.0'
@@ -27,6 +24,7 @@ target 'RxSwiftExample' do
 	
 	# Etc
 	pod 'SwiftLint'
+	
 	
 	swift_4_1_targets = []
 	

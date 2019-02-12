@@ -13,29 +13,56 @@ import RxViewController
 import SnapKit
 import Moya
 
-final class MainViewController: UIViewController {
+final class MainViewController: BaseViewController, BinderViewType {
 	
-	let disposed: DisposeBag = DisposeBag()
+	var viewModel: MainViewModel!
+	var disposedBag: DisposeBag = DisposeBag()
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.configure(keyword: "marvel")
+	typealias ViewModel = MainViewModel
+	
+	
+	func uiEventBinding() {
+	
+		viewModel.info
+			.map { _ in "marvel" }
+			.debug()
+			.bind(to: viewModel.info)
+			.disposed(by: self.disposedBag)
+
 		
 	}
 	
-	func configure(keyword: String) {
-			Observable.just(keyword)
-				.flatMap { keyword -> Observable<MovieModel> in
-					return Service.shared.request(.search(keyword)).map(MovieModel.self)
-				}
-				.map { ($0.items, $0.start)}
-				.debug()
-				.subscribe(onNext: { [weak self] in
-					print($0.0)
-					}, onError: {
-						print($0.localizedDescription)
-				})
-		.disposed(by: self.disposed)
+	func uiStateBinding() {
 		
+		viewModel.infoAction
+			.debug("321321")
+			.subscribe(onNext: { [weak self] in
+				print($0)
+			})
+		.disposed(by: self.disposedBag)
+
+		
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+	}
+	
+	
+	init(viewModel: MainViewModel) {
+		defer {
+			self.viewModel = viewModel
+			self.uiEventBinding()
+			self.uiStateBinding()
 		}
+		
+		super.init()
+		
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 }

@@ -13,6 +13,8 @@ import Alamofire
 import Sniffer
 import RxSwift
 
+
+
 //네트워크 로깅
 class DefaultAlamofireManger: Alamofire.SessionManager {
 	
@@ -32,6 +34,7 @@ final class Service: ServiceType {
 	
 	//싱글톤 생성
 	static let sharedInstance = Service()
+	
 	
 	static var shared: Service {
 		return sharedInstance

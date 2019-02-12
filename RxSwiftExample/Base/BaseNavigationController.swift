@@ -6,4 +6,14 @@
 //  Copyright © 2019 Hanzo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class BaseNavigationController: UINavigationController {
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		configure()
+	}
+	
+	func configure(){}
+}

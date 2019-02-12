@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F75E419221271C400E96EEB /* BinderViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E418221271C400E96EEB /* BinderViewType.swift */; };
+		5F75E41C221272E700E96EEB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E41B221272E700E96EEB /* BaseViewController.swift */; };
+		5F75E41E2212766200E96EEB /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E41D2212766200E96EEB /* BaseNavigationController.swift */; };
 		5FCCE9B5221134A000D7A91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCE9B4221134A000D7A91F /* AppDelegate.swift */; };
 		5FCCE9BC221134A100D7A91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCE9BB221134A100D7A91F /* Assets.xcassets */; };
 		5FCCE9BF221134A100D7A91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCE9BD221134A100D7A91F /* LaunchScreen.storyboard */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		1A8AD6AD4A6BD479B60CB975 /* Pods_RxSwiftExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBA0418C24CAF4C836C42C3 /* Pods-RxSwiftExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftExample/Pods-RxSwiftExample.release.xcconfig"; sourceTree = "<group>"; };
+		5F75E418221271C400E96EEB /* BinderViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderViewType.swift; sourceTree = "<group>"; };
+		5F75E41B221272E700E96EEB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5F75E41D2212766200E96EEB /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		5FCCE9B1221134A000D7A91F /* RxSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCCE9B4221134A000D7A91F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FCCE9BB221134A100D7A91F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +65,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5F75E4152212591100E96EEB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5F75E418221271C400E96EEB /* BinderViewType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5F75E41A221272D600E96EEB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5F75E41B221272E700E96EEB /* BaseViewController.swift */,
+				5F75E41D2212766200E96EEB /* BaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		5FCCE9A8221134A000D7A91F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +104,8 @@
 		5FCCE9B3221134A000D7A91F /* RxSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
+				5F75E41A221272D600E96EEB /* Base */,
+				5F75E4152212591100E96EEB /* Common */,
 				5FCCE9DC221169FB00D7A91F /* Contents */,
 				5FCCE9D922115FFD00D7A91F /* Model */,
 				5FCCE9D022114ADD00D7A91F /* Networking */,
@@ -234,7 +259,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -251,7 +275,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -312,10 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F75E419221271C400E96EEB /* BinderViewType.swift in Sources */,
 				5FCCE9DF22116A7200D7A91F /* MainViewModel.swift in Sources */,
 				5FCCE9DB2211600D00D7A91F /* MovieModel.swift in Sources */,
+				5F75E41E2212766200E96EEB /* BaseNavigationController.swift in Sources */,
 				5FCCE9D82211593700D7A91F /* MainViewController.swift in Sources */,
 				5FCCE9D222114AF500D7A91F /* AppApi.swift in Sources */,
+				5F75E41C221272E700E96EEB /* BaseViewController.swift in Sources */,
 				5FCCE9D622114E9A00D7A91F /* Service.swift in Sources */,
 				5FCCE9B5221134A000D7A91F /* AppDelegate.swift in Sources */,
 				5FCCE9D422114E5100D7A91F /* ServiceType.swift in Sources */,
