@@ -12,18 +12,20 @@ import Moya
 
 protocol MainViewModelInput: class {
 	var info: PublishRelay<String> { get }
+	
 }
 
 protocol MainviewModelOutput: class {
 	var infoAction: Driver<[String]> { get }
-	
 }
 
 final class MainViewModel: MainViewModelInput, MainviewModelOutput {
+	
 	var info: PublishRelay<String> = PublishRelay()
 	var infoAction: Driver<[String]>
 	
 	init() {
+		
 		infoAction = info
 			.flatMap { Service.shared.request(.search($0)).map(MovieModel.self)}
 			.map({ value -> [String] in
@@ -32,5 +34,7 @@ final class MainViewModel: MainViewModelInput, MainviewModelOutput {
 				})
 			})
 			.asDriver(onErrorJustReturn: [])
+		
+	
 	}
 }
