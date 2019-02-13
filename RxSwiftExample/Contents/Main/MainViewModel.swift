@@ -10,30 +10,27 @@ import RxSwift
 import RxCocoa
 import Moya
 
-protocol mainViewModeType {
-	
-	//UIEvent
+protocol MainViewModelInput: class {
 	var info: PublishRelay<String> { get }
-	
-	
-	//UIState
-	var infoAction: Observable<Int> { get }
 }
 
-final class MainViewModel: mainViewModeType {
-	var info: PublishRelay<String> = PublishRelay()
+protocol MainviewModelOutput: class {
+	var infoAction: Driver<[String]> { get }
 	
-	var infoAction: Observable<Int>
+}
+
+final class MainViewModel: MainViewModelInput, MainviewModelOutput {
+	var info: PublishRelay<String> = PublishRelay()
+	var infoAction: Driver<[String]>
 	
 	init() {
-		print("112324")
-		infoAction = info			
+		infoAction = info
 			.flatMap { Service.shared.request(.search($0)).map(MovieModel.self)}
-			.map { $0.display}
-			.debug()
-			.catchErrorJustReturn(0)
-		
-		
-//			.asDriver(onErrorJustReturn: [])
+			.map({ value -> [String] in
+				return value.items.map({ aa -> String in
+					return "\(aa.actor), \(aa.title) "
+				})
+			})
+			.asDriver(onErrorJustReturn: [])
 	}
 }

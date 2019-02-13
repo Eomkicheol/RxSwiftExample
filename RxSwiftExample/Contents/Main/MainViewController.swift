@@ -15,40 +15,39 @@ import Moya
 
 final class MainViewController: BaseViewController, BinderViewType {
 	
-	var viewModel: MainViewModel!
-	var disposedBag: DisposeBag = DisposeBag()
+	// MARK: ViewMdoel Configure
 	
 	typealias ViewModel = MainViewModel
 	
+	var viewModel: MainViewModel!
+	var disposedBag: DisposeBag = DisposeBag()
 	
-	func uiEventBinding() {
+	// MARK: UI Properties
 	
-		viewModel.info
-			.map { _ in "marvel" }
-			.debug()
-			.bind(to: viewModel.info)
-			.disposed(by: self.disposedBag)
-
+	let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+	
+	lazy var  collectView: UICollectionView = {
+		let view = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
+		view.alwaysBounceVertical = true
+		view.showsVerticalScrollIndicator = true
+		view.backgroundColor = .red
 		
-	}
-	
-	func uiStateBinding() {
+		//cell
+		//view.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
 		
-		viewModel.infoAction
-			.debug("321321")
-			.subscribe(onNext: { [weak self] in
-				print($0)
-			})
-		.disposed(by: self.disposedBag)
-
+		//refresh
+		view.refreshControl = UIRefreshControl()
 		
-	}
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
 		
-	}
+		return view
+	}()
 	
+	let titleName: UILabel = {
+		let label = UILabel()
+		return label
+	}()
+	
+	// MARK: Initializing
 	
 	init(viewModel: MainViewModel) {
 		defer {
@@ -56,6 +55,8 @@ final class MainViewController: BaseViewController, BinderViewType {
 			self.uiEventBinding()
 			self.uiStateBinding()
 		}
+		
+		
 		
 		super.init()
 		
@@ -65,4 +66,48 @@ final class MainViewController: BaseViewController, BinderViewType {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	
+	// MARK: Life Cycle
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+	}
+	
+	
+	override func configureUI() {
+		
+		navigationItem.title = "Home"
+		navigationItem.largeTitleDisplayMode = .always
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationController?.hidesBarsOnSwipe = true
+		
+		[collectView].forEach {
+			self.view.addSubview($0)
+		}
+		
+		self.collectView.snp.makeConstraints {
+			$0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+			$0.left.right.bottom.equalToSuperview()
+		}
+	}
+	
+	// MARK: UIEventBinding
+	
+	func uiEventBinding() {
+		self.rx.viewDidLoad
+			.map { "marvel" }
+			.bind(to: viewModel.info)
+			.disposed(by: self.disposedBag)
+	}
+	
+	// MARK: Rx UIBinding
+	
+	func uiStateBinding() {
+		viewModel.infoAction
+			.drive(onNext: {
+				print($0)
+			})
+			.disposed(by: self.disposedBag)
+	}
 }
