@@ -11,22 +11,27 @@ import RxCocoa
 import Moya
 
 protocol MainViewModelInput: class {
-	var info: PublishRelay<String> { get }
+	var movieSearch: PublishRelay<String> { get }
+    var searchErrorMessage: PublishRelay<String> { get }
 	
 }
 
 protocol MainviewModelOutput: class {
-	var infoAction: Driver<[String]> { get }
+	var movieSearchAction: Driver<[String]> { get }
+    var searchErrorMessageAction: Driver<String>? { get }
 }
 
 final class MainViewModel: MainViewModelInput, MainviewModelOutput {
 	
-	var info: PublishRelay<String> = PublishRelay()
-	var infoAction: Driver<[String]>
+	var movieSearch: PublishRelay<String> = PublishRelay()
+	var movieSearchAction: Driver<[String]>
+    
+    var searchErrorMessage: PublishRelay<String> = PublishRelay()
+    var searchErrorMessageAction: Driver<String>?
 	
 	init() {
 		
-		infoAction = info
+		movieSearchAction = movieSearch
 			.flatMap { Service.shared.request(.search($0)).map(MovieModel.self)}
 			.map({ value -> [String] in
 				return value.items.map({ aa -> String in
@@ -34,6 +39,13 @@ final class MainViewModel: MainViewModelInput, MainviewModelOutput {
 				})
 			})
 			.asDriver(onErrorJustReturn: [])
+        
+        searchErrorMessageAction = searchErrorMessage
+            .asDriver(onErrorRecover: { [weak self] message -> Driver<String> in
+                self?.searchErrorMessage.accept(message.localizedDescription)
+                return Driver.empty()//complete ? empty : Driver.just
+            })
+        
 		
 	
 	}
