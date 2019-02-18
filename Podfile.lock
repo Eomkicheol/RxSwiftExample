@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.8.0)
   - Differentiator (3.1.0)
+  - Kingfisher (5.0.1)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya/Core (11.0.2):
@@ -27,6 +28,7 @@ PODS:
   - SwiftLint (0.29.2)
 
 DEPENDENCIES:
+  - Kingfisher
   - Moya (~> 11.0)
   - Moya/RxSwift (~> 11.0)
   - RxCocoa (~> 4.0)
@@ -41,6 +43,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Differentiator
+    - Kingfisher
     - Moya
     - Result
     - RxAtomic
@@ -55,6 +58,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
@@ -66,6 +70,6 @@ SPEC CHECKSUMS:
   Sniffer: a5d3a1d5478afe874a78cd254923c43ae20262df
   SwiftLint: 47df60bdea6e7e902b193b6596db8683aafd86a3
 
-PODFILE CHECKSUM: 264601c813d7c7b094f474b889bd6416c0907168
+PODFILE CHECKSUM: 3f6bc92f45000aeca24e0533bd0080cb986ed236
 
 COCOAPODS: 1.5.3

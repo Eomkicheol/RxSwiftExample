@@ -16,6 +16,7 @@ target 'RxSwiftExample' do
 	# Network
 	pod 'Moya', '~> 11.0'
 	pod 'Sniffer'
+	pod 'Kingfisher'
 	
 	# Image
 	

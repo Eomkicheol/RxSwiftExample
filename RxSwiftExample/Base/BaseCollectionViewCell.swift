@@ -8,4 +8,22 @@
 
 import UIKit
 
-class BaseCollectionViewCell: UICollectionViewCell {}
+class BaseCollectionViewCell: UICollectionViewCell {
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.configureUI()
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+	}
+	
+	func configureUI() {}
+	
+	
+}

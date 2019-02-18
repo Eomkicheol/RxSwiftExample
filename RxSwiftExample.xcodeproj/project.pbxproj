@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5F043BC62214072700635313 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F043BC52214072700635313 /* BaseCollectionViewCell.swift */; };
+		5F20C1AF221AB7FB00847F19 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F20C1AE221AB7FB00847F19 /* CommonExtension.swift */; };
 		5F75E419221271C400E96EEB /* BinderViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E418221271C400E96EEB /* BinderViewType.swift */; };
 		5F75E41C221272E700E96EEB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E41B221272E700E96EEB /* BaseViewController.swift */; };
 		5F75E41E2212766200E96EEB /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E41D2212766200E96EEB /* BaseNavigationController.swift */; };
+		5F762C6D221A3FC200A7F288 /* MovieSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F762C6C221A3FC200A7F288 /* MovieSection.swift */; };
+		5F762C70221A4A2600A7F288 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F762C6F221A4A2600A7F288 /* MovieCollectionViewCell.swift */; };
 		5FCCE9B5221134A000D7A91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCE9B4221134A000D7A91F /* AppDelegate.swift */; };
 		5FCCE9BC221134A100D7A91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCE9BB221134A100D7A91F /* Assets.xcassets */; };
 		5FCCE9BF221134A100D7A91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCE9BD221134A100D7A91F /* LaunchScreen.storyboard */; };
@@ -28,9 +31,12 @@
 		1A8AD6AD4A6BD479B60CB975 /* Pods_RxSwiftExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBA0418C24CAF4C836C42C3 /* Pods-RxSwiftExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftExample/Pods-RxSwiftExample.release.xcconfig"; sourceTree = "<group>"; };
 		5F043BC52214072700635313 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F20C1AE221AB7FB00847F19 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		5F75E418221271C400E96EEB /* BinderViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderViewType.swift; sourceTree = "<group>"; };
 		5F75E41B221272E700E96EEB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5F75E41D2212766200E96EEB /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		5F762C6C221A3FC200A7F288 /* MovieSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSection.swift; sourceTree = "<group>"; };
+		5F762C6F221A4A2600A7F288 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		5FCCE9B1221134A000D7A91F /* RxSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCCE9B4221134A000D7A91F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FCCE9BB221134A100D7A91F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				5F75E418221271C400E96EEB /* BinderViewType.swift */,
+				5F20C1AE221AB7FB00847F19 /* CommonExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -83,6 +90,15 @@
 				5F043BC52214072700635313 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		5F762C6E221A4A0600A7F288 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F762C6C221A3FC200A7F288 /* MovieSection.swift */,
+				5F762C6F221A4A2600A7F288 /* MovieCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5FCCE9A8221134A000D7A91F = {
@@ -165,6 +181,7 @@
 		5FCCE9DD22116A2000D7A91F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5F762C6E221A4A0600A7F288 /* Cells */,
 				5FCCE9D72211593700D7A91F /* MainViewController.swift */,
 				5FCCE9DE22116A7200D7A91F /* MainViewModel.swift */,
 			);
@@ -261,6 +278,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftExample/Pods-RxSwiftExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
@@ -277,6 +295,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
@@ -338,13 +357,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F20C1AF221AB7FB00847F19 /* CommonExtension.swift in Sources */,
 				5F75E419221271C400E96EEB /* BinderViewType.swift in Sources */,
+				5F762C70221A4A2600A7F288 /* MovieCollectionViewCell.swift in Sources */,
 				5FCCE9DF22116A7200D7A91F /* MainViewModel.swift in Sources */,
 				5FCCE9DB2211600D00D7A91F /* MovieModel.swift in Sources */,
 				5F75E41E2212766200E96EEB /* BaseNavigationController.swift in Sources */,
 				5F043BC62214072700635313 /* BaseCollectionViewCell.swift in Sources */,
 				5FCCE9D82211593700D7A91F /* MainViewController.swift in Sources */,
 				5FCCE9D222114AF500D7A91F /* AppApi.swift in Sources */,
+				5F762C6D221A3FC200A7F288 /* MovieSection.swift in Sources */,
 				5F75E41C221272E700E96EEB /* BaseViewController.swift in Sources */,
 				5FCCE9D622114E9A00D7A91F /* Service.swift in Sources */,
 				5FCCE9B5221134A000D7A91F /* AppDelegate.swift in Sources */,
