@@ -100,7 +100,6 @@ final class MainViewController: BaseViewController, BinderViewType {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 	}
 	
 	
@@ -140,6 +139,11 @@ final class MainViewController: BaseViewController, BinderViewType {
 			}
 			.bind(to: viewModel.movieSearch )
 			.disposed(by: self.disposedBag)
+		
+		//		collectView.rx.itemSelected
+		//			.map { $0 }
+		//			.bind(to: viewModel.detailItems )
+		//			.disposed(by: self.disposedBag)
 	}
 	
 	// MARK: Rx UIBinding
@@ -182,7 +186,6 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 		return 1.5
 	}
 	
-
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
 		switch dataSource[section] {
@@ -192,4 +195,3 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 		}
 	}
 }
-

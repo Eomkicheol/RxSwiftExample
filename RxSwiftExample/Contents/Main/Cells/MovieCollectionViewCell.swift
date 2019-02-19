@@ -127,7 +127,7 @@ import Kingfisher
 		}
 		
 		self.titleLabel.text = value.title.removeHTMLTag
-		self.subtitleLabel.text = "( \(value.subtitle))"
+		self.subtitleLabel.text = "( \(value.subtitle.removeHTMLTag))"
 		self.actorLabel.text = "출연: \(value.actor.replacingComma.dropLast())"
 		self.directorLabel.text = "감독: \(value.director.dropLast())"
 		self.userRatingLabel.text = "평점: \(value.userRating)"

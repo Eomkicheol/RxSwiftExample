@@ -8,12 +8,11 @@
 
 import RxSwift
 import RxCocoa
-import Moya
 
 protocol MainViewModelInput: class {
 	var movieSearch: PublishRelay<String> { get }
 	var searchErrorMessage: PublishRelay<String> { get }
-	
+	//var sectionList: BehaviorRelay<[MovieSection]> { get set }
 }
 
 protocol MainviewModelOutput: class {
@@ -21,7 +20,11 @@ protocol MainviewModelOutput: class {
 	var movieSearchAction: Driver<[MovieSection]> { get }
 }
 
-final class MainViewModel: MainViewModelInput, MainviewModelOutput {
+protocol MainViewModelBinder: MainViewModelInput, MainviewModelOutput {}
+
+final class MainViewModel: MainViewModelBinder {
+	
+	var sectionList: BehaviorRelay<[MovieSection]> = BehaviorRelay(value: [])
 	
 	var movieSearch: PublishRelay<String> = PublishRelay()
 	var movieSearchAction: Driver<[MovieSection]>
@@ -30,8 +33,8 @@ final class MainViewModel: MainViewModelInput, MainviewModelOutput {
 	var searchErrorMessageAction: Driver<String>?
 	
 	init() {
-		
-	movieSearchAction	= movieSearch
+	
+		movieSearchAction	= movieSearch
 			.flatMap { Service.shared.request(.search($0)).map(MovieModel.self)}
 			.map { sectionItems -> [MovieSectionItem] in
 				return sectionItems.items.map({ item -> MovieSectionItem in
@@ -40,16 +43,22 @@ final class MainViewModel: MainViewModelInput, MainviewModelOutput {
 			}
 			.map { sections -> [MovieSection] in
 				return [MovieSection.itemsSection(sections)]
-		}
-		.asDriver(onErrorJustReturn: [])
+			}
+			.asDriver(onErrorJustReturn: [])
+		
+		
+		movieSearch.withLatestFrom(movieSearchAction)
+			.map { _ in print("1234")}
+			.subscribe(onNext: {
+				print($0)
+			})
+		.disposed(by: DisposeBag())
+		
 		
 		searchErrorMessageAction = searchErrorMessage
-			.asDriver(onErrorRecover: { [weak self] message -> Driver<String> in
-				self?.searchErrorMessage.accept(message.localizedDescription)
-				return Driver.empty()//complete ? empty : Driver.just
-			})
-		
-		
-		
+				.asDriver(onErrorRecover: {[weak self] message -> Driver<String> in
+					self?.searchErrorMessage.accept(message.localizedDescription)
+					return Driver.empty() //complete ? empty : Driver.just
+				})
 	}
 }

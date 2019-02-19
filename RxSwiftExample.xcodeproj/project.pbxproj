@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F043BC62214072700635313 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F043BC52214072700635313 /* BaseCollectionViewCell.swift */; };
 		5F20C1AF221AB7FB00847F19 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F20C1AE221AB7FB00847F19 /* CommonExtension.swift */; };
+		5F4CD4C1221B991100C158FE /* MainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4CD4C0221B991100C158FE /* MainDetailViewController.swift */; };
+		5F4CD4C3221B992700C158FE /* MainDeatilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4CD4C2221B992700C158FE /* MainDeatilViewModel.swift */; };
 		5F75E419221271C400E96EEB /* BinderViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E418221271C400E96EEB /* BinderViewType.swift */; };
 		5F75E41C221272E700E96EEB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E41B221272E700E96EEB /* BaseViewController.swift */; };
 		5F75E41E2212766200E96EEB /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75E41D2212766200E96EEB /* BaseNavigationController.swift */; };
@@ -32,6 +34,8 @@
 		1FBA0418C24CAF4C836C42C3 /* Pods-RxSwiftExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftExample/Pods-RxSwiftExample.release.xcconfig"; sourceTree = "<group>"; };
 		5F043BC52214072700635313 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F20C1AE221AB7FB00847F19 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
+		5F4CD4C0221B991100C158FE /* MainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailViewController.swift; sourceTree = "<group>"; };
+		5F4CD4C2221B992700C158FE /* MainDeatilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDeatilViewModel.swift; sourceTree = "<group>"; };
 		5F75E418221271C400E96EEB /* BinderViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderViewType.swift; sourceTree = "<group>"; };
 		5F75E41B221272E700E96EEB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5F75E41D2212766200E96EEB /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,15 @@
 				1FBA0418C24CAF4C836C42C3 /* Pods-RxSwiftExample.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5F4CD4BF221B98EE00C158FE /* MainDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5F4CD4C0221B991100C158FE /* MainDetailViewController.swift */,
+				5F4CD4C2221B992700C158FE /* MainDeatilViewModel.swift */,
+			);
+			path = MainDetail;
 			sourceTree = "<group>";
 		};
 		5F75E4152212591100E96EEB /* Common */ = {
@@ -173,6 +186,7 @@
 		5FCCE9DC221169FB00D7A91F /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				5F4CD4BF221B98EE00C158FE /* MainDetail */,
 				5FCCE9DD22116A2000D7A91F /* Main */,
 			);
 			path = Contents;
@@ -363,7 +377,9 @@
 				5FCCE9DF22116A7200D7A91F /* MainViewModel.swift in Sources */,
 				5FCCE9DB2211600D00D7A91F /* MovieModel.swift in Sources */,
 				5F75E41E2212766200E96EEB /* BaseNavigationController.swift in Sources */,
+				5F4CD4C1221B991100C158FE /* MainDetailViewController.swift in Sources */,
 				5F043BC62214072700635313 /* BaseCollectionViewCell.swift in Sources */,
+				5F4CD4C3221B992700C158FE /* MainDeatilViewModel.swift in Sources */,
 				5FCCE9D82211593700D7A91F /* MainViewController.swift in Sources */,
 				5FCCE9D222114AF500D7A91F /* AppApi.swift in Sources */,
 				5F762C6D221A3FC200A7F288 /* MovieSection.swift in Sources */,
